@@ -84,5 +84,19 @@ router.delete('/comment', function(req, res, next) {
 
 });
 
+//authentication
+var auth = require("http-auth");
+var basic = auth.basic({
+  realm: "Admin Portal",
+  file: __dirname + "/../htpasswd"
+});
+router.get("/admin", auth.connect(basic), (req, res) => {
+  res.render('admin/portal', {user: req.user});
+});
+
+router.get("/admin/announcement", auth.connect(basic), (req, res) => {
+  res.render('admin/announcement', {user: req.user});
+});
+
 
 module.exports = router;
