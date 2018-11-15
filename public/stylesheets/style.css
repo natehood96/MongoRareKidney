@@ -9,6 +9,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+#kindeyNav{
+  height: 60px;
+  position: center;
+}
+
+#site-title {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 50px auto;
+  align-items: center;
+}
+
 .header
 {
     line-height: 8px;
@@ -72,4 +85,11 @@ a {
 
 .item {
     position:relative;
+}
+
+.container {
+  /*padding-right: 15px;*/
+  /*padding-left: 15px;*/
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
 }
