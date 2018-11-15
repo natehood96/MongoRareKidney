@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>RKDF - Admin - Announcement</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+      form {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 800px;
+        justify-content: center;
+        justify-items: center;
+        width: 800px;
+        margin: 0px auto;
+      }
+      
+      input, textarea {
+        width: 100%;
+      }
+      
+      textarea {
+        height: 200px;
+      }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        const url = "/admin/announcement/db";
+        $('button').click(function(){
+          console.log("clicked!");
+          const data = {
+            title: $("input").val(),
+            text: $("textarea").val()
+          }
+          
+          console.log(data);
+          
+          $.post(url, data, function(data, status){
+            console.log(data);
+          })
+          
+          return false;
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <a href="/admin">Back to Portal</a>
+    <form>
+      <input type="text" placeholder="Announcement Title" class="w3-margin w3-large">
+      <textarea placeholder="Announcement Text" class="w3-margin"></textarea>
+      <button class="w3-btn w3-green w3-margin">Publish</button>
+    </form>
+  </body>
+</html>
