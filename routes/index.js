@@ -22,7 +22,7 @@ router.get("/admin/announcement", auth.connect(basic), (req, res) => {
   res.render('admin/announcement', {user: req.user});
 });
 
-router.post("/admin/announcement/db", function(req, res){
+router.post("/admin/announcement/db", auth.connect(basic), function(req, res){
   var announcement = new Announcement(req.body);
   announcement.save(function(err, announcement){
     if(err){ return next(err); }
@@ -46,7 +46,7 @@ router.param('announcement', function(req, res, next, id) {
   });
 });
 
-router.delete("/admin/announcement/db/:announcement", function(req, res){
+router.delete("/admin/announcement/db/:announcement", auth.connect(basic), function(req, res){
   req.announcement.remove();
   res.sendStatus(200);
 });
@@ -63,7 +63,7 @@ router.post("/admin/contact/db", function(req, res){
   });
 });
 
-router.get("/admin/contact/db", function(req, res){
+router.get("/admin/contact/db", auth.connect(basic), function(req, res){
   Contact.find(function(err, contacts){
     if(err){ return next(err); }
     res.json(contacts);
@@ -79,7 +79,7 @@ router.param('contact', function(req, res, next, id) {
   });
 });
 
-router.delete("/admin/contact/db/:contact", function(req, res){
+router.delete("/admin/contact/db/:contact", auth.connect(basic), function(req, res){
   req.contact.remove();
   res.sendStatus(200);
 });

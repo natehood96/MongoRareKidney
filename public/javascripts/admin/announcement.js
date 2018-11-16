@@ -1,9 +1,7 @@
-angular.module("app", [])
+angular.module("app", ['ngSanitize'])
   .controller("mainCtrl", function ($scope, $http) {
-    // tada! a users array will now be bound to and made available to our html template
     $scope.announcements = [];
     $scope.title;
-    $scope.text;
 
     const url = "/admin/announcement/db";
     
@@ -16,9 +14,17 @@ angular.module("app", [])
     $scope.getAnnouncements();
   
     $scope.newAnnouncement = function(){
+      var content = document.getElementsByClassName("nicEdit-main")[0].innerHTML;
+
+      //make sure that both fields are filled
+      if(!content || !$scope.title){
+        alert("Please add a title and content.");
+        return;
+      }
+      
       const data = {
         title: $scope.title,
-        text: $scope.text,
+        text: content,
         date: (new Date()).toString()
       }
       
@@ -30,7 +36,7 @@ angular.module("app", [])
       
       //set fields to be blank
       $scope.title = "";
-      $scope.text = "";
+      document.getElementsByClassName("nicEdit-main")[0].innerHTML = "";
       
       //fetch announcements again
       $scope.getAnnouncements();

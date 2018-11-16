@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Rare Kidney Foundation</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="javascripts/comments.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-sanitize.js"></script>
+  <script src="javascripts/blog.js"></script>
+  
+  <link href="stylesheets/sandstone.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+  <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="stylesheets/blog.css" rel="stylesheet">
+
+</head>
+
+
+<body class='bg-light' style="height:1500px">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow navbar-fixed-top">
+    <a class="navbar-brand" href="#">
+      <div id='site-title' class='header'>
+        <div><img id='kidneyNav' src="/stylesheets/Images/Kidney_DNA_Logo.png" alt="KidneyLogo"></div>
+        <div>
+          <p>Rare Kidney</p>
+          <p>Disease</p>
+          <p>Foundation</p>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="posts" class="container container-top" ng-app='app' ng-controller='mainCtrl'>
+    <ul>
+      <li ng-repeat="a in announcements.slice().reverse()">
+        <div class="date">{{a.date}}</div>
+        <div class="title">{{a.title}}</div>
+        <div class="text" ng-bind-html="a.text"></div>
+        <hr>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

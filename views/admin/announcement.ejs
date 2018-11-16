@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/stylesheets/admin/announcement.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-sanitize.js"></script>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
     <script src="/javascripts/admin/announcement.js"></script>
   </head>
   
@@ -15,7 +18,7 @@
     <form id="addForm" ng-submit="newAnnouncement()" class="w3-section">
       <h2>Add a New Announcement</h2>
       <input type="text" placeholder="Announcement Title" ng-model="title">
-      <textarea placeholder="Announcement Text" ng-model="text"></textarea>
+      <textarea placeholder="Announcement Text"></textarea>
       <button class="w3-btn w3-green" type="submit">Publish</button>
     </form>
     
@@ -24,12 +27,12 @@
     <div id="past" class="w3-section">
       <h2>Past Announcements</h2>
       <ul>
-        <li ng-repeat="a in announcements" class="w3-card w3-padding w3-pale-yellow">
+        <li ng-repeat="a in announcements.slice().reverse()" class="w3-card w3-padding w3-pale-yellow">
           <button class="w3-btn w3-red" ng-click="delete(a)">X</button>
           <div>
             <h3>{{a.title}}</h3>
             <div class="w3-tiny">{{a.date}}</div>
-            <div>{{a.text}}</div>
+            <div ng-bind-html="a.text"></div>
           </div>
         </li>
       </ul>

@@ -1,0 +1,31 @@
+#posts ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#posts li {
+  width: 80%;
+  margin: 50px auto;
+}
+
+#posts .date {
+  font-size: 12px;
+}
+
+#posts .title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+#posts .text {
+  font-size: 16px;
+}
+
+hr {
+  width: 90%;
+  margin: 20px auto;
+  margin-top: 50px;
+}
