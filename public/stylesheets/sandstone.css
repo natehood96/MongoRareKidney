@@ -565,10 +565,6 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-.spacing{
-  margin-top: 156px;
-  margin-bottom: 156px;
-}
 
 @media (min-width: 576px) {
   .container {

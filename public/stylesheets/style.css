@@ -52,6 +52,11 @@ a {
 
 }
 
+.spacing{
+  margin-top: 125px;
+  margin-bottom: 125px;
+}
+
 .container-spacing {
  text-align: center;
  
@@ -143,7 +148,7 @@ a {
 /*    display:table-cell;*/
 /*    vertical-align: middle;*/
 /*    text-align:center;*/
-}
+/*}*/
 
 .item {
     position:relative;
