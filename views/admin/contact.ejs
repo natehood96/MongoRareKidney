@@ -14,7 +14,7 @@
     </header>
     <div id="info" class="w3-section">
       <ul>
-        <li ng-repeat="c in contacts" class="w3-card w3-padding w3-sand">
+        <li ng-repeat="c in contacts.slice().reverse()" class="w3-card w3-padding w3-sand">
           <button class="w3-btn w3-red" ng-click="delete(c)">X</button>
           <div>
             <h3>{{c.name}}</h3>

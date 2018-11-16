@@ -4,12 +4,13 @@
 <head>
   <title> Rare Kidney Foundation</title>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="javascripts/comments.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="javascripts/index.js"></script>
 
 
   <link href="stylesheets/sandstone.css" rel="stylesheet">
@@ -229,28 +230,48 @@
     </div>
   </div>
   
-  
   <!--SHOULD GIVE A LARGE SPACE BETWEEN EACH SECTION-->
   <div class='spacing'></div>
   
   
-
-
-
-  <div class="cForm">
-    <form class="form-inline my-2 my-lg-0" id="commentForm" action="">
-      <label for="name">Name: </label><input class="form-control mr-sm-2" type="text" id="name" placeholder="Name"><br>
-      <label for="comment">comment: </label><input class="form-control mr-sm-2" type="text" id="comment" placeholder="Comment"><br>
-    </form>
-
-    <button class="btn btn-success" id="postComment">Post Comment</button>
-    <button class="btn btn-info" id="getComments">Get Comments</button>
-    <button class="btn btn-danger" id="deleteComments">Delete All</button>
-    <div id="json"></div>
-    <div id="done"></div>
-    <div id="comments"></div>
+  
+    <div class="container head-space">
+    <div class="row justify-content-around">
+      <div class="col-4">
+        <span><h1 class='container-spacing'><span class='container-text-header'>Help Find a Cure</span></h1> 
+        
+        <!--<h1 style='position: center; margin-left: 40px;'>Researchers</h1>-->
+        </span>
+        <div class='small-dash'></div>
+        <div class = 'container-text-content'>
+          <p>We need your help to find a cure to rare kidney diseases. Enter your contact info here, and we'll be in touch with you!</p>
+          <form id="contact-input" ng-app='app' ng-controller='mainCtrl' ng-submit="newContact()">
+            <input type="text" placeholder="Name (required)" ng-model="name" required>
+            <input type="email" placeholder="Email (required)" ng-model="email" required>
+            <input type="tel" placeholder="Phone (optional)" ng-model="phone">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+      <!--SHOULD GIVE A LARGE SPACE BETWEEN EACH SECTION-->
+  <div class='spacing'></div>
+  
+  
+      <div class="col-4">
+        <div class='kidney-align'>
+          <img id='KidneyGenetic' src="/stylesheets/Images/Kidney_DNA_Logo.png" alt="KidneyLogo">
+        </div>
+      </div>
+    </div>
   </div>
-
+  
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+  
 </body>
 
 </html>
