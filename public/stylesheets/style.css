@@ -15,13 +15,36 @@ a {
   position: center;
 }
 
+#KidneyGenetic{
+  margin-top: 40px;
+  margin-left: 90px;
+  height: 150px;
+  position: center;
+}
+
 #site-title {
   display: grid;
   grid-template-rows: 50px;
   grid-template-columns: 50px auto;
   align-items: center;
 }
+.small-dash{
+  width: 60px;
+  height: 6px;
+  margin: 36px auto;
+  background: #2E393F;
+  display: block;
+}
 
+.small-bar{
+  /*width: 3px;
+  height: 30px;
+  margin: 36px auto;
+  background: #2E393F;
+  display: inline-block;*/
+  font-weight:bold;
+  font-size: 30px;
+}
 .header
 {
     line-height: 8px;
@@ -31,6 +54,33 @@ a {
 
 }
 
+.container-spacing {
+ text-align: center;
+ 
+}
+.container-text-header{
+  text-transform: uppercase; 
+  font-weight: 600;
+  text-align: center;
+
+}
+.container-text-content{
+  font-family: arial, sans-serif; 
+  /*font-family: Helvetica;*/
+  text-align: center;
+  font-size: 1.2em;
+  color: #4f4e4e;
+}
+
+
+.container {
+  max-width: 2000px;
+  width: 90%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .tabs{
     float: right;
     width: 300px;
