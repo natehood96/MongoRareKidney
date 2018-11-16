@@ -1,0 +1,57 @@
+#addForm {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 800px;
+  justify-content: center;
+  justify-items: center;
+  grid-row-gap: 10px;
+  width: 800px;
+  margin: 0px auto;
+}
+
+#addForm input, #addForm textarea {
+  width: 100%;
+}
+
+#addForm textarea {
+  height: 100px;
+}
+
+#addForm button {
+  width: 100%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h3 {
+  margin: 0px;
+}
+
+#past ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#past li {
+  width: 80%;
+  margin: 15px auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 50px auto;
+  grid-column-gap: 20px;
+  align-items: center;
+}
+
+#past li button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+hr {
+  width: 90%;
+  margin: 20px auto;
+}

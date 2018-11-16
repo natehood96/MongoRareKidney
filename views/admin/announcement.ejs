@@ -2,54 +2,37 @@
   <head>
     <title>RKDF - Admin - Announcement</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-      form {
-        display: grid;
-        grid-template-rows: auto auto auto;
-        grid-template-columns: 800px;
-        justify-content: center;
-        justify-items: center;
-        width: 800px;
-        margin: 0px auto;
-      }
-      
-      input, textarea {
-        width: 100%;
-      }
-      
-      textarea {
-        height: 200px;
-      }
-    </style>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        const url = "/admin/announcement/db";
-        $('button').click(function(){
-          console.log("clicked!");
-          const data = {
-            title: $("input").val(),
-            text: $("textarea").val()
-          }
-          
-          console.log(data);
-          
-          $.post(url, data, function(data, status){
-            console.log(data);
-          })
-          
-          return false;
-        })
-      })
-    </script>
+    <link rel="stylesheet" href="/stylesheets/admin/announcement.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="/javascripts/admin/announcement.js"></script>
   </head>
-  <body>
-    <a href="/admin">Back to Portal</a>
-    <form>
-      <input type="text" placeholder="Announcement Title" class="w3-margin w3-large">
-      <textarea placeholder="Announcement Text" class="w3-margin"></textarea>
-      <button class="w3-btn w3-green w3-margin">Publish</button>
+  
+  <body ng-app='app' ng-controller='mainCtrl'>
+    <header class="w3-container w3-blue">
+      <a href="/admin">Back to Portal</a>
+      <h1>Manage Announcements</h1>
+    </header>
+    <form id="addForm" ng-submit="newAnnouncement()" class="w3-section">
+      <h2>Add a New Announcement</h2>
+      <input type="text" placeholder="Announcement Title" ng-model="title">
+      <textarea placeholder="Announcement Text" ng-model="text"></textarea>
+      <button class="w3-btn w3-green" type="submit">Publish</button>
     </form>
+    
+    <hr>
+    
+    <div id="past" class="w3-section">
+      <h2>Past Announcements</h2>
+      <ul>
+        <li ng-repeat="a in announcements" class="w3-card w3-padding w3-pale-yellow">
+          <button class="w3-btn w3-red" ng-click="delete(a)">X</button>
+          <div>
+            <h3>{{a.title}}</h3>
+            <div class="w3-tiny">{{a.date}}</div>
+            <div>{{a.text}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

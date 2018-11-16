@@ -36,5 +36,19 @@ router.get("/admin/announcement/db", function(req, res){
   });
 });
 
+router.param('announcement', function(req, res, next, id) {
+  Announcement.findById(id, function (err, announcement){
+    if (err) { return next(err); }
+    if (!announcement) { return next(new Error("can't find announcement")); }
+    req.announcement = announcement;
+    return next();
+  });
+});
+
+router.delete("/admin/announcement/db/:announcement", function(req, res){
+  req.announcement.remove();
+  res.sendStatus(200);
+});
+
 
 module.exports = router;
