@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin: 0px;
+}
+
+#info ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#info li {
+  width: 80%;
+  margin: 15px auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 50px auto;
+  grid-column-gap: 20px;
+  align-items: center;
+}
+
+#info li button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

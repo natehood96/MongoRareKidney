@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>RKDF - Admin - Contact Info</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/stylesheets/admin/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="/javascripts/admin/contact.js"></script>
+  </head>
+  
+  <body ng-app='app' ng-controller='mainCtrl'>
+    <header class="w3-container w3-yellow">
+      <a href="/admin">Back to Portal</a>
+      <h1>View Contact Info</h1>
+    </header>
+    <div id="info" class="w3-section">
+      <ul>
+        <li ng-repeat="c in contacts" class="w3-card w3-padding w3-sand">
+          <button class="w3-btn w3-red" ng-click="delete(c)">X</button>
+          <div>
+            <h3>{{c.name}}</h3>
+            <div>{{c.email}}</div>
+            <div>{{c.phone}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
